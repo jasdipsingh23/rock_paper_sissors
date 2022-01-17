@@ -5,7 +5,7 @@ function computerPlay() {
     return options[random];
 }
 
-function playGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
 
@@ -35,3 +35,13 @@ function playGame(playerSelection, computerSelection) {
         }
     }
 }
+
+function game() {
+    for(let i = 0; i < 5; i++) {
+        console.log("Lets play Rock, Paper, Scissors! Best of 5 wins!");
+        let playerSelection = prompt("What do you choose? Rock, Paper, or Scissors?");
+        let computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
