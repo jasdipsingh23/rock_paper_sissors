@@ -36,12 +36,21 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    for(let i = 0; i < 5; i++) {
-        console.log("Lets play Rock, Paper, Scissors! Best of 5 wins!");
-        let playerSelection = prompt("What do you choose? Rock, Paper, or Scissors?");
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
+// function game() {
+//     for(let i = 0; i < 5; i++) {
+//         console.log("Lets play Rock, Paper, Scissors! Best of 5 wins!");
+//         let playerSelection = prompt("What do you choose? Rock, Paper, or Scissors?");
+//         let computerSelection = computerPlay();
+//         console.log(playRound(playerSelection, computerSelection));
+//     }
+// }
 
+const btnList = document.querySelectorAll("button");
+btnList.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.id;
+        let result = playRound(playerSelection, computerPlay());
+        console.log(result);
+        document.getElementById("content").textContent = result;
+    });
+});
